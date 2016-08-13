@@ -1,0 +1,7 @@
+@import '../../components/not-found/~styles/shared';
+
+.not-found {
+  composes: fitted middle;
+  min-height: 100vh;
+  text-align: center;
+}
