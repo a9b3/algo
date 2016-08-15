@@ -1,8 +1,6 @@
-# react-starter-kit
-[![Build
-Status](https://travis-ci.org/esayemm/react-starter-kit.svg?branch=master)](https://travis-ci.org/esayemm/react-starter-kit)
+# algo
 
-A starter kit for frontend project using babel for transpiling es6, webpack for building assets, karma for testing, and a supplied Dockerfile for building a container.
+Site for algorithm.
 
 ##Gulp
 #### `gulp [PORT?=8080]`

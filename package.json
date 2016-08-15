@@ -1,7 +1,7 @@
 {
-  "name": "react-starter-kit",
+  "name": "algo",
   "version": "0.0.1",
-  "description": "Front-end starter kit with react, webpack, gulp, redux, postcss, babel",
+  "description": "Site for algo notes",
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test karma start --single-run",
