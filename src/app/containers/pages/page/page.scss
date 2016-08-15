@@ -1,0 +1,21 @@
+@import '~styles/shared';
+
+.page {
+  composes: flex-col;
+  height: 100%;
+  padding: 100px 0;
+  align-items: center;
+  overflow: auto;
+}
+
+.header {
+  composes: h1 bold;
+  width: $page-width;
+  margin-bottom: 50px;
+}
+
+.content {
+  composes: flex-col;
+  width: 100%;
+  align-items: center;
+}

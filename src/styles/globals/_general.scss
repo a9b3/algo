@@ -1,4 +1,8 @@
 :global {
+  html, body {
+    height: 100%;
+  }
+
   .debug {
     border: 1px dotted $green3;
     box-sizing: border-box;

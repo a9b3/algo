@@ -1,0 +1,39 @@
+@import '~styles/shared';
+
+.sidebar {
+  height: 100%;
+  width: 100%;
+  composes: flex-col;
+  background: $dark-alt2;
+  color: $dark7;
+  padding: 200px 0;
+}
+
+.item {
+  padding: 10px 20%;
+}
+.item:first-child {
+  padding-top: 0;
+}
+
+.content {
+  padding: 40px 0;
+  flex-grow: 1;
+  composes: flex-col;
+  overflow: auto;
+}
+
+.title {
+  composes: h5 semi-bold;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.navnode {
+  padding: 10px 20%;
+
+  .navnode {
+    padding: 10px 20px;
+    padding-right: 0;
+  }
+}

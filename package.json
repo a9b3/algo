@@ -36,7 +36,7 @@
     "del": "2.0.2",
     "enzyme": "^2.3.0",
     "eslint": "^2.9.0",
-    "eslint-config-esayemm": "^0.2.3",
+    "eslint-config-esayemm": "^1.0.0",
     "eslint-plugin-react": "^5.0.1",
     "expect": "^1.20.2",
     "express": "4.13.3",

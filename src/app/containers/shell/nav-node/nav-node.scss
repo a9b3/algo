@@ -1,0 +1,28 @@
+@import '~styles/shared';
+
+.nav-node {
+  a {
+    color: inherit;
+  }
+}
+
+.title {
+  composes: flex-row;
+  align-items: center;
+
+  i {
+    margin-left: auto;
+    font-size: 15px;
+  }
+}
+.title:hover {
+  cursor: pointer;
+}
+
+.has-child {
+
+}
+
+.children {
+
+}

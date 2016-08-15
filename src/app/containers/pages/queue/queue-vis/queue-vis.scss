@@ -1,0 +1,45 @@
+@import '~styles/shared';
+
+.queue-vis {
+
+}
+
+.vis {
+  max-width: $page-width;
+}
+
+.queue {
+  composes: flex-row;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+
+  .node {
+    padding: 10px;
+    background: $green3;
+    margin: 1px;
+    color: white;
+    position: relative;
+  }
+
+  .node-info {
+    position: absolute;
+    color: $dark3;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+}
+
+.info {
+
+}
+
+.buttons {
+  composes: flex-row;
+
+  button {
+    flex-grow: 1;
+    margin: 5px;
+  }
+}

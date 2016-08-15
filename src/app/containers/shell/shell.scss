@@ -1,0 +1,14 @@
+@import '~styles/shared';
+
+.shell {
+  height: 100%;
+  composes: flex-row;
+}
+
+.sidebar {
+  width: 30%;
+}
+
+.content {
+  flex-grow: 1;
+}
