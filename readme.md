@@ -1,5 +1,7 @@
 # algo
 
+[![Build Status](https://travis-ci.org/esayemm/algo.svg?branch=master)](https://travis-ci.org/esayemm/algo)
+
 Site for algorithm.
 
 ##Gulp
