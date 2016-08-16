@@ -6,6 +6,43 @@ class Node {
     this.left
     this.right
   }
+
+  _removePointers() {
+    this.parent = undefined
+    this.left = undefined
+    this.right = undefined
+  }
+
+  remove() {
+    // only one child or no child
+    if (!(this.left && this.right)) {
+      const node = this.left || this.right
+
+      if (this.parent) {
+        if (this.parent.left === this) {
+          this.parent.left = node
+        }
+        if (this.parent.right === this) {
+          this.parent.right = node
+        }
+      }
+      if (node) {
+        node.parent = this.parent
+      }
+      this._removePointers()
+      return node
+    }
+
+    // has both children
+    let cursor = this.right
+    while(cursor.left) {
+      cursor = cursor.left
+    }
+    this.value = cursor.value
+    this.key = cursor.key
+    cursor.remove()
+    return this
+  }
 }
 
 /*
@@ -17,11 +54,6 @@ class BST {
     this.root
   }
 
-  find(key) {
-    const node = this._findNode(key)
-    return node && node.value
-  }
-
   _findNode(key, node=this.root) {
     if (!node) return
     if (node.key === key) return node
@@ -29,6 +61,11 @@ class BST {
     return key < node.key
       ? this._findNode(key, node.left)
       : this._findNode(key, node.right)
+  }
+
+  find(key) {
+    const node = this._findNode(key)
+    return node && node.value
   }
 
   findMin() {
@@ -96,61 +133,16 @@ class BST {
     const node = this._findNode(key)
     if (!node) return
     const retValue = node.value
+
+    if (node === this.root) {
+      this.root = node.remove()
+    } else {
+      node.remove()
+    }
+
     this.size--
 
-    if (node.left && node.right) {
-      let cursor = node.right
-
-      if (cursor.left) {
-        while(cursor.left) {
-          cursor = cursor.left
-        }
-
-        if (!cursor.right) {
-          node.value = cursor.value
-          node.key = cursor.key
-          cursor.parent.left = undefined
-          return retValue
-        } else {
-          node.value = cursor.value
-          node.key = cursor.key
-          cursor.parent.left = cursor.right
-          cursor.right.parent = cursor.parent
-          return retValue
-        }
-      } else {
-        node.value = cursor.value
-        node.key = cursor.key
-        node.right = cursor.right
-        if (cursor.right) {
-          cursor.right.parent = node
-        }
-        return retValue
-      }
-    } else if (node.left) {
-      node.value = node.left.value
-      node.key = node.left.key
-      node.right = node.left.right
-      node.left = node.left.left
-      return retValue
-    } else if (node.right) {
-      node.value = node.right.value
-      node.key = node.right.key
-      node.left = node.right.left
-      node.right = node.right.right
-      return retValue
-    } else {
-      if (!node.parent) {
-        this.root = undefined
-      } else {
-        if (node.parent.left === node) {
-          node.parent.left = undefined
-        } else if (node.parent.right === node) {
-          node.parent.right = undefined
-        }
-      }
-      return retValue
-    }
+    return retValue
   }
 }
 
