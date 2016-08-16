@@ -2,7 +2,7 @@ import Heap from './Heap.js'
 import expect from 'expect'
 
 describe('Heap', () => {
-  it('insert/delete', async () => {
+  it('insert/extract', async () => {
     const heap = new Heap()
     heap.insert(5)
     heap.insert(10)
@@ -34,16 +34,16 @@ describe('Heap', () => {
     heap.insert(1)
     expect(heap.data[0]).toBe(30)
 
-    expect(heap.delete()).toBe(30)
-    expect(heap.delete()).toBe(25)
-    expect(heap.delete()).toBe(24)
-    expect(heap.delete()).toBe(23)
-    expect(heap.delete()).toBe(22)
-    expect(heap.delete()).toBe(21)
-    expect(heap.delete()).toBe(20)
-    expect(heap.delete()).toBe(10)
-    expect(heap.delete()).toBe(5)
-    expect(heap.delete()).toBe(1)
-    expect(heap.delete()).toNotExist()
+    expect(heap.extract()).toBe(30)
+    expect(heap.extract()).toBe(25)
+    expect(heap.extract()).toBe(24)
+    expect(heap.extract()).toBe(23)
+    expect(heap.extract()).toBe(22)
+    expect(heap.extract()).toBe(21)
+    expect(heap.extract()).toBe(20)
+    expect(heap.extract()).toBe(10)
+    expect(heap.extract()).toBe(5)
+    expect(heap.extract()).toBe(1)
+    expect(heap.extract()).toNotExist()
   })
 })

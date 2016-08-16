@@ -40,7 +40,7 @@ class Heap {
     }
   }
 
-  delete() {
+  extract() {
     const node = this.data[0]
     this.data[0] = this.data[this.data.length - 1]
     this.data.pop()
